@@ -90,7 +90,7 @@
     padding: 16px 20px; margin-bottom: 20px;
   }
   .stats-top {
-    display: flex; align-items: center; gap: 24px; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 24px;
   }
   .stat-pill {
     display: flex; flex-direction: column; align-items: center;
@@ -110,24 +110,14 @@
   }
   .progress-label { font-size: 10px; color: #6b7280; margin-top: 4px; text-align: right; }
 
-  /* Category badges */
-  .cat-grid {
-    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;
+  /* Nav count badge */
+  .nav-count {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    background: rgba(255,255,255,.22); color: #fff;
+    border-radius: 99px; padding: 0 6px; line-height: 16px;
+    margin-left: 4px; vertical-align: middle;
   }
-  .cat-pill {
-    display: flex; align-items: center; gap: 5px;
-    background: #f3f4f6; border-radius: 99px;
-    padding: 3px 10px; font-size: 11px; color: #374151;
-    border: 1px solid #e5e7eb;
-  }
-  .cat-pill a { color: inherit; text-decoration: none; }
-  .cat-pill a:hover { color: #1a3d2b; }
-  .cat-count {
-    font-weight: 700; font-size: 12px;
-    background: #1a3d2b; color: #fff;
-    border-radius: 99px; padding: 0 6px; line-height: 18px;
-  }
-  .cat-count.zero { background: #22c55e; }
+  .nav-count.zero { background: #22c55e; }
 </style>
 </head>
 <body>
@@ -165,7 +155,6 @@
       <div class="progress-label" id="s-pct">计算中…</div>
     </div>
   </div>
-  <div class="cat-grid" id="cat-grid"></div>
 </div>
 
 <!-- PAGE 1 -->
@@ -403,7 +392,6 @@
   ];
 
   var totalDone = 0, totalPending = 0;
-  var catGrid = document.getElementById('cat-grid');
 
   pages.forEach(function(p) {
     var el = document.getElementById(p.id);
@@ -429,18 +417,14 @@
       badge.parentNode.insertBefore(span, badge);
     }
 
-    // Category pill
-    var pill = document.createElement('div');
-    pill.className = 'cat-pill';
-    var cnt = document.createElement('span');
-    cnt.className = 'cat-count' + (pending === 0 ? ' zero' : '');
-    cnt.textContent = pending;
-    var lnk = document.createElement('a');
-    lnk.href = '#' + p.id;
-    lnk.textContent = p.name;
-    pill.appendChild(cnt);
-    pill.appendChild(lnk);
-    catGrid.appendChild(pill);
+    // Inject count badge into nav link
+    var navLink = document.querySelector('nav a[href="#' + p.id + '"]');
+    if (navLink) {
+      var cnt = document.createElement('span');
+      cnt.className = 'nav-count' + (pending === 0 ? ' zero' : '');
+      cnt.textContent = pending;
+      navLink.appendChild(cnt);
+    }
   });
 
   var total = totalDone + totalPending;
