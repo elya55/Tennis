@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elya 网球小抄本</title>
+<style>
+  @page { size: A4 landscape; margin: 16mm 18mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    font-size: 11px; color: #1a1a1a; background: #fff;
+  }
+  .page {
+    width: 100%; min-height: 170mm;
+    page-break-after: always;
+    display: flex; flex-direction: column;
+  }
+  .page:last-child { page-break-after: avoid; }
+  .page-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 12px; background: #1a3d2b;
+    border-radius: 6px 6px 0 0; margin-bottom: 10px;
+  }
+  .page-title { font-size: 16px; font-weight: 700; color: #fff; }
+  .page-subtitle { font-size: 10px; color: #fff; opacity: 0.7; font-style: italic; }
+  .page-badge { font-size: 10px; color: #a8d5b5; font-weight: 500; }
+  .warning {
+    background: #fff8e1; border-left: 3px solid #f59e0b;
+    padding: 5px 10px; margin-bottom: 8px;
+    border-radius: 0 4px 4px 0; font-size: 10.5px; color: #92400e; font-weight: 600;
+  }
+  .note {
+    background: #f0fdf4; border-left: 3px solid #2d6a4f;
+    padding: 5px 10px; margin-bottom: 8px;
+    border-radius: 0 4px 4px 0; font-size: 10px; color: #166534;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 10.5px; }
+  thead tr { background: #e8f4f0; }
+  th {
+    padding: 5px 8px; text-align: left; font-weight: 700;
+    color: #1a3d2b; border: 1px solid #b7dfc8;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.3px;
+  }
+  td { padding: 4px 8px; border: 1px solid #e0e0e0; vertical-align: middle; line-height: 1.4; }
+  tr:nth-child(even) td { background: #f9fafb; }
+  .pri { font-size: 13px; text-align: center; width: 40px; }
+  .status { font-size: 13px; text-align: center; width: 36px; }
+  .done td { color: #aaa; text-decoration: line-through; }
+  .p-red   { border-left: 3px solid #ef4444; }
+  .p-orange{ border-left: 3px solid #f97316; }
+  .p-yellow{ border-left: 3px solid #eab308; }
+  .p-green { border-left: 3px solid #22c55e; }
+  .p-red td:nth-child(3) { font-weight: 600; }
+  .page-footer {
+    margin-top: auto; padding-top: 6px;
+    font-size: 8.5px; color: #9ca3af;
+    text-align: right; border-top: 1px solid #e5e7eb;
+  }
+  /* Screen nav (HTML only) */
+  @media screen {
+    body { max-width: 960px; margin: 0 auto; padding: 24px; background: #f3f4f6; }
+    .page {
+      background: #fff; border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      padding: 20px; margin-bottom: 32px;
+      min-height: auto;
+    }
+    nav {
+      position: sticky; top: 0; background: #1a3d2b; border-radius: 8px;
+      padding: 10px 16px; margin-bottom: 24px;
+      display: flex; gap: 8px; flex-wrap: wrap; z-index: 10;
+    }
+    nav a {
+      color: #a8d5b5; text-decoration: none; font-size: 11px;
+      padding: 3px 8px; border-radius: 4px; white-space: nowrap;
+    }
+    nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
+    h2.nav-anchor { scroll-margin-top: 60px; }
+  }
+  @media print {
+    nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#p1">全局基础</a>
+  <a href="#p2">正手</a>
+  <a href="#p3">中场进攻</a>
+  <a href="#p4">反手</a>
+  <a href="#p5">截击</a>
+  <a href="#p6">发球</a>
+  <a href="#p7">接发</a>
+  <a href="#p8">战术</a>
+  <a href="#p9">记录</a>
+</nav>
+
+<!-- PAGE 1 -->
+<div class="page" id="p1">
+  <div class="page-header">
+    <div class="page-title">全局基础</div>
+    <div class="page-subtitle">对所有技术通用</div>
+    <div class="page-badge">Elya 网球小抄本 · 1/9</div>
+  </div>
+  <table>
+    <thead><tr><th class="status">状态</th><th class="pri">优先级</th><th>项目</th><th>关联概念</th></tr></thead>
+    <tbody>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>分腿垫步</strong>（对方击球瞬间）</td><td>移动击球框架</td></tr>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>快速跑到位，再站稳击球</strong></td><td>移动击球框架</td></tr>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>保持低重心、少起伏</strong>（蹲不下去就双脚叉开更大）</td><td>重心稳定</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>手腕放松（斜方肌放松、背阔肌下沉，充分释放拍头速度）</td><td>松紧节奏</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>降拍面（拍头低于来球）</td><td>发力体系</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>由后向前</strong>发力（转髋从后向前，减少从下向上）</td><td>发力体系</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>蹬转</strong>（脚蹬地带动转体）</td><td>发力体系</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>开放式站位：整体向前扑</strong>（脚/重心/肩一起向前）</td><td>移动击球框架</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>随挥完整</strong></td><td>松紧节奏</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>把每一个球当多球打（同样来球→同样回球质量和线路）</td><td>比赛意识</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>击球完立即回位</td><td>移动击球框架</td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>先引拍后跑</td><td></td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>转肩</td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer">🔴 最高 · 🟠 高 · 🟡 中 · 🟢 进阶 · ✅ 已改进</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="p2">
+  <div class="page-header">
+    <div class="page-title">正手</div>
+    <div class="page-subtitle">底线正手击球</div>
+    <div class="page-badge">Elya 网球小抄本 · 2/9</div>
+  </div>
+  <div class="warning">⚠ 当前主要问题（高天龙 01课）：刷多送少，没有球质，打不深。</div>
+  <table>
+    <thead><tr><th class="status">状态</th><th class="pri">优先级</th><th>项目</th><th>关联概念</th></tr></thead>
+    <tbody>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>拍头向前充分甩出，减少刷</strong>（甩不赢再收拍，不着急收拍）</td><td>发力体系</td></tr>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>左手指球找击球距离</strong>（不被球挤到，挤到打不出球质）</td><td>人球距离</td></tr>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>击球节奏</strong>（架拍→降拍头连贯，不停顿）</td><td>发力体系</td></tr>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>发力先转髋</strong>（髋→肩→手的顺序）</td><td>发力体系</td></tr>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>重心从后向前</strong>（转移到前脚，不后仰击球）</td><td>发力体系</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>小臂内旋</strong>带动拍头加速</td><td>发力体系</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>充分<strong>送肩</strong>，收拍上肩（大臂顶到下巴）</td><td>发力体系</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>关闭式脚步练习（高球用开放式）</td><td>移动击球框架</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>蓄力时踩稳左脚＋转髋</td><td>发力体系</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>降拍头，拍头低于来球再出拍</td><td>发力体系</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>核心绷紧（打多了应是腰酸，不是手酸）</td><td>重心稳定</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>拍头放松（不绷紧手臂）</td><td>松紧节奏</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>挥拍时左手牵引（向上扬带动右半身）</td><td>发力体系</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>背阔肌感知：架拍到收拍，左侧绷紧→右侧绷紧</td><td>发力体系</td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>引拍不夹肘</td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer">🔴 最高 · 🟠 高 · 🟡 中 · 🟢 进阶 · ✅ 已改进</div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="p3">
+  <div class="page-header">
+    <div class="page-title">中场进攻（正手）</div>
+    <div class="page-subtitle">发现浅球，主动抢攻</div>
+    <div class="page-badge">Elya 网球小抄本 · 3/9</div>
+  </div>
+  <div class="note">两位教练一致强调。发现浅球要主动抢，不要等。</div>
+  <table>
+    <thead><tr><th class="status">状态</th><th class="pri">优先级</th><th>项目</th><th>关联概念</th></tr></thead>
+    <tbody>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>发现浅球立刻跑到位</strong>（垫步向前），站定后再击球</td><td>中前场进攻技术</td></tr>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>提前架拍</strong>（到位前完成），高于来球，找高点击球</td><td>中前场进攻技术</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>转髋＋送肩合力，不靠手臂单独发力</td><td>发力体系</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>击打球的<strong>上部向下扣杀</strong>（高点进攻型）</td><td>中前场进攻技术</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>击球时<strong>向前小跳</strong>，带动身体向前惯性</td><td>中前场进攻技术</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>以<strong>推深、控点</strong>为主；球感好且空间充足时再加速</td><td>比赛意识</td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer">🔴 最高 · 🟠 高 · 🟡 中 · 🟢 进阶 · ✅ 已改进</div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="p4">
+  <div class="page-header">
+    <div class="page-title">反手</div>
+    <div class="page-subtitle">底线反手击球</div>
+    <div class="page-badge">Elya 网球小抄本 · 4/9</div>
+  </div>
+  <table>
+    <thead><tr><th class="status">状态</th><th class="pri">优先级</th><th>项目</th><th>关联概念</th></tr></thead>
+    <tbody>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>左手主导</strong>（发力主力，控方向）</td><td>反手技术</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>引拍抬肘、沉肩（Drop Shoulder）</td><td>反手技术</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>拍头先滞后，再掉下去</td><td>反手技术</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>击球时向前送球</td><td>反手技术</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>拍头放松</td><td>松紧节奏</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>随挥收上肩（High Elbow，不夹肘）</td><td>反手技术</td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>转肩引拍（开放式 unit turn）</td><td></td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>拍头滞后（上）</td><td></td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>转髋掉拍头（下→上）</td><td></td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>拍头充分往前送</td><td></td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>随挥上肩</td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer">🔴 最高 · 🟠 高 · 🟡 中 · 🟢 进阶 · ✅ 已改进</div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="p5">
+  <div class="page-header">
+    <div class="page-title">截击</div>
+    <div class="page-subtitle">网前截击处理</div>
+    <div class="page-badge">Elya 网球小抄本 · 5/9</div>
+  </div>
+  <table>
+    <thead><tr><th class="status">状态</th><th class="pri">优先级</th><th>项目</th><th>关联概念</th></tr></thead>
+    <tbody>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>拍子放脸前，严禁松懈下垂</strong></td><td>截击技术</td></tr>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>往前送</strong> ✓，向下砍 ✗</td><td>截击技术</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>慢球主动向前扑；快球借力挡回</strong>（不主动发力）</td><td>截击技术</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>击球瞬间眼睛看向球拍</strong></td><td>截击技术</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>左手和右手保持近距离</strong>（不必张开太大）</td><td>截击技术</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>高球拍面稍下压并控制朝向</td><td>截击技术</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>身体势头向前（不后倒、不缩手）</td><td>截击技术</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>拍头立起（高于手腕）</td><td>截击技术</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>向前的小月亮切削（不向下切）</td><td>截击技术</td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer">🔴 最高 · 🟠 高 · 🟡 中 · 🟢 进阶 · ✅ 已改进</div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="p6">
+  <div class="page-header">
+    <div class="page-title">发球</div>
+    <div class="page-subtitle">一发 / 二发</div>
+    <div class="page-badge">Elya 网球小抄本 · 6/9</div>
+  </div>
+  <table>
+    <thead><tr><th class="status">状态</th><th class="pri">优先级</th><th>项目</th><th>关联概念</th></tr></thead>
+    <tbody>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>架拍挠头</strong>（不能翻手腕）</td><td>发球技术</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>抛球正上方</strong>（不偏后，不远离身体）</td><td>发球技术</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td>架拍手<strong>往后放一点</strong>（解决翻拍面）</td><td>发球技术</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>降拍头与转体同步</strong>，连贯爆发，不分解</td><td>发球技术</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>击球瞬间鞭打手腕</strong>（不靠小臂）</td><td>发球技术</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>出拍后伸展开</td><td>发球技术</td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>身体转起来</td><td></td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>出拍伸展运动（不考虑小臂内旋）</td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer">🔴 最高 · 🟠 高 · 🟡 中 · 🟢 进阶 · ✅ 已改进</div>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="p7">
+  <div class="page-header">
+    <div class="page-title">接发球</div>
+    <div class="page-subtitle">接发节奏与站位</div>
+    <div class="page-badge">Elya 网球小抄本 · 7/9</div>
+  </div>
+  <table>
+    <thead><tr><th class="status">状态</th><th class="pri">优先级</th><th>项目</th><th>关联概念</th></tr></thead>
+    <tbody>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>垫步重心朝向来球</strong>（外角→右脚撑地蹬左；内角→左脚撑地蹬右）</td><td>接发节奏</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>小引拍，向前送</strong></td><td>接发节奏</td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>击球垫步（垫步后判断向哪边扑）</td><td></td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>抛球上步</td><td></td></tr>
+      <tr class="done"><td class="status">✅</td><td class="pri">—</td><td>球落地向前扑</td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer">🔴 最高 · 🟠 高 · 🟡 中 · 🟢 进阶 · ✅ 已改进</div>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page" id="p8">
+  <div class="page-header">
+    <div class="page-title">战术意识</div>
+    <div class="page-subtitle">比赛中的决策逻辑</div>
+    <div class="page-badge">Elya 网球小抄本 · 8/9</div>
+  </div>
+  <table>
+    <thead><tr><th class="status">状态</th><th class="pri">优先级</th><th>项目</th><th>关联概念</th></tr></thead>
+    <tbody>
+      <tr class="p-red"><td class="status">⬜</td><td class="pri">🔴</td><td><strong>深度优先</strong>（回球压底线，给对手制造压力）</td><td>比赛意识</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>防守球优先挑高挑深</strong>（被动时不轻碰回球）</td><td>比赛意识</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>中场球摆斜线</strong>（斜线比直线更容易得分）</td><td>中场落点决策</td></tr>
+      <tr class="p-orange"><td class="status">⬜</td><td class="pri">🟠</td><td><strong>月亮球拉上旋</strong>（落地弹高且往前窜，增加压迫感）</td><td>比赛意识</td></tr>
+      <tr class="p-yellow"><td class="status">⬜</td><td class="pri">🟡</td><td>站稳的球打落点（稳定后才追求落点）</td><td>比赛意识</td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer">🔴 最高 · 🟠 高 · 🟡 中 · 🟢 进阶 · ✅ 已改进</div>
+</div>
+
+<!-- PAGE 9 -->
+<div class="page" id="p9">
+  <div class="page-header">
+    <div class="page-title">改进记录</div>
+    <div class="page-subtitle">已完成的技术里程碑</div>
+    <div class="page-badge">Elya 网球小抄本 · 9/9</div>
+  </div>
+  <table>
+    <thead><tr><th>日期</th><th>改进项</th></tr></thead>
+    <tbody>
+      <tr><td style="white-space:nowrap">初始版</td><td>先引拍后跑、转肩（全局）</td></tr>
+      <tr><td style="white-space:nowrap">初始版</td><td>引拍不夹肘（正手）</td></tr>
+      <tr><td style="white-space:nowrap">初始版</td><td>转肩引拍 · 拍头滞后 · 转髋掉拍头 · 拍头往前送 · 随挥上肩（反手）</td></tr>
+      <tr><td style="white-space:nowrap">初始版</td><td>身体转起来 · 出拍伸展（发球）</td></tr>
+      <tr><td style="white-space:nowrap">2026-04-11</td><td>击球垫步 · 抛球上步 · 球落地向前扑（接发）</td></tr>
+      <tr><td style="white-space:nowrap">2026-04-21</td><td>截击分类（慢扑/快借力/高压拍面）；发球：抛球正上方、架拍往后、降拍头+转体同步（叶教练08课）</td></tr>
+      <tr><td style="white-space:nowrap">2026-04-23</td><td>正手新增：左手指球 · 小臂内旋 · 背阔肌感知 · 送球减少刷（升🔴）；新增中场进攻专项（高天龙01课）</td></tr>
+    </tbody>
+  </table>
+  <div style="margin-top:16px;padding:10px 14px;background:#f0fdf4;border-radius:6px;border:1px solid #b7dfc8;">
+    <div style="font-size:11px;font-weight:700;color:#1a3d2b;margin-bottom:4px;">上场前原则</div>
+    <div style="font-size:10.5px;color:#166534;">只挑 1-2 个口诀，大脑专注执行而非纠结技术细节。</div>
+  </div>
+  <div class="page-footer">🔴 最高 · 🟠 高 · 🟡 中 · 🟢 进阶 · ✅ 已改进</div>
+</div>
+
+</body>
+</html>
